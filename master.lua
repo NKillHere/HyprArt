@@ -2,12 +2,12 @@
 -- can be customized to one's liking. For more information on how to configure, it is
 -- highly recommended to look at the wiki -> https://wiki.hypr.land/Configuring/Start/
 
-local utils = require("utils")
+require("utils")
 
 
 --- Default Apps
 
-local default = prequire("cfg/defaults")
+prequire("cfg/defaults")
 
 
 --- Autostarting Apps
@@ -50,4 +50,4 @@ prequire("visuals/vmaster")
 
 ---- KEYBINDINGS
 
-prequire("input")
+prequire("cfg/input")
