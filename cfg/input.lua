@@ -12,16 +12,16 @@ local sideMod2 = "CTRL"
 --- Apps
 
 -- Open Terminal (foot by default)
-hl.bind(mainMod.. " + RETURN", hl.dsp.exec_cmd(default.terminal))
+hl.bind(mainMod.. " + RETURN", hl.dsp.exec_cmd(default.apps.terminal))
 
 -- Open File Explorer (Thunar by default)
-hl.bind(mainMod.. " + E", hl.dsp.exec_cmd(default.fileExplorer))
+hl.bind(mainMod.. " + E", hl.dsp.exec_cmd(default.apps.fileExplorer))
 
 -- Open Web Browser (Zen by default)
-hl.bind(mainMod.. " + B", hl.dsp.exec_cmd(default.webBrowser))
+hl.bind(mainMod.. " + B", hl.dsp.exec_cmd(default.apps.webBrowser))
 
 -- Open App Launcher/Menu (Rofi by default)
-hl.bind(mainMod.. " + D", hl.dsp.exec_cmd(default.appLauncher))
+hl.bind(mainMod.. " + D", hl.dsp.exec_cmd(default.apps.appLauncher))
 
 -- Open Screenshot App ()
 
