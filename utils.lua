@@ -1,6 +1,6 @@
 function prequire(path) -- a pcall method requires
-    if path ~= string then
-        print("Failed to load module ", path, ", because whoever coded this forgot " +
+    if type(path) ~= "string" then
+        print("Failed to load a module because whoever coded this forgot " +
             "to use a string")
     end
     local status, value = pcall(require, path)
