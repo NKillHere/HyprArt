@@ -28,10 +28,11 @@ local startupWallpaper = "awww-daemon" -- May not be needed whenever I swap to h
 -- Default Apps
 default = {
     apps = {
-        terminal = "foot",
-        fileExplorer = "thunar",
-        appLauncher = "rofi -show drun",
-        webBrowser = "flatpak run app.zen_browser.zen" -- You can change this to the AUR version.
+        terminal = "foot", -- foot by default
+        fileExplorer = "thunar", -- thunar by default
+        appLauncher = "rofi -show drun", -- rofi by default
+        webBrowser = "flatpak run app.zen_browser.zen", -- zen on flatpak by default, you can change this to the AUR version
     },
-    statusBar = "waybar"
+    statusBar = "waybar",
+    discord = "vesktop", -- vesktop by Default, you need to change it to com\.[organisation]\.[app] for the flatpak version as it is used for global app keybinds.
 }
