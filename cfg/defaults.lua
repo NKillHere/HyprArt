@@ -24,12 +24,14 @@ hl.config({
 -- Autostarting Apps
 
 local startupWallpaper = "awww-daemon" -- May not be needed whenever I swap to hyprpaper
-statusBar = "waybar"
 
 -- Default Apps
 default = {
-    terminal = "foot",
-    fileExplorer = "thunar",
-    appLauncher = "rofi -show drun",
-    webBrowser = "flatpak run app.zen_browser.zen" -- You can change this to the AUR version.
+    apps = {
+        terminal = "foot",
+        fileExplorer = "thunar",
+        appLauncher = "rofi -show drun",
+        webBrowser = "flatpak run app.zen_browser.zen" -- You can change this to the AUR version.
+    },
+    statusBar = "waybar"
 }
