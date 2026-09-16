@@ -1,7 +1,6 @@
 -- Welcome to HyprArt, a simple enough hyprland config for Artix that 'just works', but
 -- can be customized to one's liking. For more information on how to configure, it is
 -- highly recommended to look at the wiki -> https://wiki.hypr.land/Configuring/Start/
-
 require("utils")
 
 
@@ -29,7 +28,7 @@ prequire("cfg/input")
 -- contains configuration for some mundane yet useful things
 -- such as monitor settings and cursor config
 
-prequire("envariables/necessities")
+prequire("envariables/cursor")
 
 
 --- Access Control
