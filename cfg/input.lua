@@ -29,6 +29,9 @@ hl.bind("Print", function()
     hl.plugin.hyprcapture.open("window")
 end)
 
+-- Enable blue light filter (hyprsunset by default)
+-- hl.bind(mainMod.. " + ".. sideMod1.. " + S", hl.dsp.exec_cmd("hyprsunset"))
+
 --- Global App Keybinds
 -- OBS
 
