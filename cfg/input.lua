@@ -46,8 +46,9 @@ hl.bind(mainMod.. " + KP_Next", hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key
 --- Actions
 -- Things that change how hyprland displays things, such as changing focus to other windows
 
-hl.bind(mainMod.. " + Q",                                      hl.dsp.window.close()) -- close window
-hl.bind(mainMod.. " + ".. sideMod1.. " + Q",                   hl.dsp.window.close()) -- kill stubborn window
+hl.bind(mainMod.. " + Q",                       hl.dsp.window.close()) -- close window
+hl.bind(mainMod .. " + " .. sideMod1 .. " + Q", hl.dsp.window.close()) -- kill stubborn window
+
 hl.bind(mainMod.. " + ".. sideMod1.." + ".. sideMod2.. " + M", hl.dsp.exec_cmd("hyprshutdown -vt 2")) -- Exit Hyprland. TODO: Add to install script: https://wiki.hypr.land/hypr-ecosystem/user/hyprshutdown/#nvidia--sddm-users
 
 hl.bind(mainMod.. " + F",                    hl.dsp.window.fullscreen({mode = "maximized", action = "toggle"})) -- Maximise or "Fake" fullscreen
@@ -68,13 +69,12 @@ hl.bind(mainMod.. " + ".. sideMod1.. "+ right", hl.dsp.window.move({direction = 
 hl.bind(mainMod.. " + ".. sideMod1.. "+ up",    hl.dsp.window.move({direction = "up"}))
 hl.bind(mainMod.. " + ".. sideMod1.. "+ down",  hl.dsp.window.move({direction = "down"}))
 
+-- Changing workspace logic
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod.. " + ".. key,             hl.dsp.focus({workspace = i}))
-    hl.bind(mainMod.. " + SHIFT + ".. key,     hl.dsp.window.move({workspace = i}))
+    hl.bind(mainMod.. " + ".. key,         hl.dsp.focus({workspace = i})) -- Switch workspaces with mainMod + [0-9]
+    hl.bind(mainMod.. " + SHIFT + ".. key, hl.dsp.window.move({workspace = i})) -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 end
 
 -- Change cursor size(Doesn't save)
