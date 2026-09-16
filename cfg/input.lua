@@ -77,13 +77,6 @@ for i = 1, 10 do
     hl.bind(mainMod.. " + ".. sideMod1.. " + ".. key, hl.dsp.window.move({workspace = i})) -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 end
 
--- Change cursor size(Doesn't save)
-hl.bind(mainMod.. " + plus", function()
-    resize_cursor("+", 1)
-end)
-hl.bind(mainMod.. " + equal", function()
-    resize_cursor("-", 1)
-end)
 
 -- Scroll through non-empty workspaces with mainMod + scroll
 hl.bind(mainMod.. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
