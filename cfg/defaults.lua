@@ -36,3 +36,5 @@ default = {
     statusBar = "waybar",
     discord = "vesktop", -- vesktop by Default, you need to change it to com\.[organisation]\.[app] for the flatpak version as it is used for global app keybinds.
 }
+
+hl.bind("SUPER + F", hl.dsp.exec_cmd("hyprlauncher"))
