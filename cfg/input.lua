@@ -61,6 +61,13 @@ hl.bind(mainMod.. " + right", hl.dsp.focus({direction = "right"}))
 hl.bind(mainMod.. " + up",    hl.dsp.focus({direction = "up"}))
 hl.bind(mainMod.. " + down",  hl.dsp.focus({direction = "down"}))
 
+-- Move window to a direction with mainMod + arrow keys
+
+hl.bind(mainMod.. " + ".. sideMod1.. "+ left",  hl.dsp.window.move({direction = "left"}))
+hl.bind(mainMod.. " + ".. sideMod1.. "+ right", hl.dsp.window.move({direction = "right"}))
+hl.bind(mainMod.. " + ".. sideMod1.. "+ up",    hl.dsp.window.move({direction = "up"}))
+hl.bind(mainMod.. " + ".. sideMod1.. "+ down",  hl.dsp.window.move({direction = "down"}))
+
 -- Cycle workspaces
 hl.bind(mainMod .. "+ tab", function()
     local window = hl.get_active_workspace()
