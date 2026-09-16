@@ -68,10 +68,6 @@ hl.bind(mainMod.. " + ".. sideMod1.. "+ right", hl.dsp.window.move({direction = 
 hl.bind(mainMod.. " + ".. sideMod1.. "+ up",    hl.dsp.window.move({direction = "up"}))
 hl.bind(mainMod.. " + ".. sideMod1.. "+ down",  hl.dsp.window.move({direction = "down"}))
 
--- Cycle workspaces
-hl.bind(mainMod .. "+ tab", function()
-    local window = hl.get_active_workspace()
-end)
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -88,9 +84,12 @@ end)
 hl.bind(mainMod.. " + equal", function()
     resize_cursor("-", 1)
 end)
+
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod.. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod.. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
+-- Cycle through existing workspaces
+hl.bind(mainMod.. " + TAB", hl.dsp.focus({workspace = "e+1"}))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod.. " + mouse:272", hl.dsp.window.drag(),   {mouse = true})
