@@ -9,7 +9,7 @@ prequire("envariables/cursor")
 local mainMod = "SUPER"
 local sideMod1 = "SHIFT"
 local sideMod2 = "CTRL"
-
+local sideMod3 = "ALT"
 
 --- Apps
 -- Open Terminal (foot by default)
@@ -74,7 +74,7 @@ hl.bind(mainMod.. " + ".. sideMod1.. "+ down",  hl.dsp.window.move({direction = 
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     hl.bind(mainMod.. " + ".. key,         hl.dsp.focus({workspace = i})) -- Switch workspaces with mainMod + [0-9]
-    hl.bind(mainMod.. " + SHIFT + ".. key, hl.dsp.window.move({workspace = i})) -- Move active window to a workspace with mainMod + SHIFT + [0-9]
+    hl.bind(mainMod.. " + ".. " + ".. key, hl.dsp.window.move({workspace = i})) -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 end
 
 -- Change cursor size(Doesn't save)
@@ -89,7 +89,10 @@ end)
 hl.bind(mainMod.. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod.. " + mouse_up",   hl.dsp.focus({workspace = "e-1"}))
 -- Cycle through existing workspaces
-hl.bind(mainMod.. " + TAB", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({workspace = "e+1"}))
+
+hl.bind(mainMod.. " + ".. sideMod3.. " + left",  hl.dsp.focus({workspace = "e-1"}))
+hl.bind(mainMod.. " + ".. sideMod3.. " + right", hl.dsp.focus({workspace = "e+1"}))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod.. " + mouse:272", hl.dsp.window.drag(),   {mouse = true})
