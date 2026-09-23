@@ -1,7 +1,35 @@
-require("utils")
 local selectedScheme = prequire("red-n-black/colors.lua")
 
+ha.funcs.vmaster = {
+    swap_layout = function()
+        local layouts = {"scrolling", "dwindle", "master", "monocle"}
+        local workspace = hl.get_active_special_workspace()
+        if hl.get_active_special_workspace() then
+            workspace = hl.get_active_special_workspace()
+        end
+        if not workspace then
+            return
+        end
 
+        local layout = "dwindle"
+
+        for i = 1, #layouts do
+            if layouts[i] == workspace.tiled_layout then
+                local next_layout_idx = (i % #layouts) + 1
+
+                layout = layouts[next_layout_idx]
+
+                break
+            end
+        end
+
+        if workspace.special then
+            hl.workspace_rule({workspace = tostring(workspace.name), layout = layout})
+        else
+            hl.workspace_rule({workspace = tostring(workspace.id), layout = layout})
+        end
+    end
+}
 hl.config({
     general = {
         gaps_in  = 5,
@@ -14,8 +42,6 @@ hl.config({
 
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
-
-        layout = "dwindle",
     },
 
     decoration = {

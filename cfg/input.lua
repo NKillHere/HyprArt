@@ -1,10 +1,10 @@
 -- Just CTRL+F to search for what keybind you want to change.
 -- Some combination may require a more complex method, read the wiki for more info: -> https://wiki.hypr.land/configuring/core/binds/
 
-require("utils")
 prequire("cfg/defaults")
 prequire("scripts")
 prequire("envariables/cursor")
+prequire("visuals/vmaster")
 
 local mainMod = "SUPER"
 local sideMod1 = "SHIFT"
@@ -13,16 +13,16 @@ local sideMod3 = "ALT"
 
 --- Apps
 -- Open Terminal (foot by default)
-hl.bind(mainMod.. " + RETURN", hl.dsp.exec_cmd(default.apps.terminal))
+hl.bind(mainMod.. " + RETURN", hl.dsp.exec_cmd(ha.vars.default.apps.terminal))
 
 -- Open File Explorer (thunar by default)
-hl.bind(mainMod.. " + E", hl.dsp.exec_cmd(default.apps.fileExplorer))
+hl.bind(mainMod.. " + E", hl.dsp.exec_cmd(ha.vars.default.apps.fileExplorer))
 
 -- Open Web Browser (zen by default)
-hl.bind(mainMod.. " + B", hl.dsp.exec_cmd(default.apps.webBrowser))
+hl.bind(mainMod.. " + B", hl.dsp.exec_cmd(ha.vars.default.apps.webBrowser))
 
 -- Open App Launcher/Menu (rofi by default)
-hl.bind(mainMod.. " + D", hl.dsp.exec_cmd(default.apps.appLauncher))
+hl.bind(mainMod.. " + D", hl.dsp.exec_cmd(ha.vars.default.apps.appLauncher))
 
 -- Open Screenshot App (hyprcapture by default)
 hl.bind("Print", function()
@@ -39,8 +39,8 @@ hl.bind("F8",              hl.dsp.pass({ window = [[class:com\.obsproject\.Studi
 hl.bind(mainMod.. " + F3", hl.dsp.send_shortcut({mods = "", key = "F3", window = [[class:com\.obsproject\.Studio]] })) -- Useful bind, can use to set the window capture
 
 -- Discord & Discord Alternatives
-hl.bind(mainMod.. " + KP_End",  hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key = "M", window = "class:".. default.discord}))
-hl.bind(mainMod.. " + KP_Next", hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key = "D", window = "class:".. default.discord}))
+hl.bind(mainMod.. " + KP_End",  hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key = "M", window = "class:".. ha.vars.default.discord}))
+hl.bind(mainMod.. " + KP_Next", hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key = "D", window = "class:".. ha.vars.default.discord}))
 
 
 --- Actions
@@ -56,6 +56,8 @@ hl.bind(mainMod.. " + ".. sideMod1.. " + F", hl.dsp.window.fullscreen({mode = "f
 
 hl.bind(mainMod.. " + SPACE", hl.dsp.window.float({action = "toggle"})) -- toggle float
 
+hl.bind(mainMod.. " + L", ha.funcs.vmaster.swap_layout)
+
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod.. " + left",  hl.dsp.focus({direction = "left"}))
 hl.bind(mainMod.. " + right", hl.dsp.focus({direction = "right"}))
@@ -63,14 +65,12 @@ hl.bind(mainMod.. " + up",    hl.dsp.focus({direction = "up"}))
 hl.bind(mainMod.. " + down",  hl.dsp.focus({direction = "down"}))
 
 -- Move window to a direction with mainMod + arrow keys
-
 hl.bind(mainMod.. " + ".. sideMod1.. "+ left",  hl.dsp.window.move({direction = "left"}))
 hl.bind(mainMod.. " + ".. sideMod1.. "+ right", hl.dsp.window.move({direction = "right"}))
 hl.bind(mainMod.. " + ".. sideMod1.. "+ up",    hl.dsp.window.move({direction = "up"}))
 hl.bind(mainMod.. " + ".. sideMod1.. "+ down",  hl.dsp.window.move({direction = "down"}))
 
 -- Changing workspace logic
-
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     hl.bind(mainMod.. " + ".. key,         hl.dsp.focus({workspace = i})) -- Switch workspaces with mainMod + [0-9]

@@ -3,6 +3,12 @@
 -- highly recommended to look at the wiki -> https://wiki.hypr.land/Configuring/Start/
 require("utils")
 
+-- Function calling table layout
+
+ha = {
+    vars = {},
+    funcs = {}
+}
 
 --- Default Apps
 
@@ -12,7 +18,6 @@ prequire("cfg/defaults")
 --- Autostarting Apps
 
 prequire("cfg/start-up")
-
 
 --- Monitors
 
@@ -46,7 +51,3 @@ prequire("visuals/vmaster")
 
 -- Per-device configs go here
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
-
----- KEYBINDINGS
-
-prequire("cfg/input")

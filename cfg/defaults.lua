@@ -26,12 +26,13 @@ hl.config({
 local startupWallpaper = "awww-daemon" -- May not be needed whenever I swap to hyprpaper
 
 -- Default Apps
-default = {
+ha.vars.default = {
     apps = {
         terminal = "foot", -- foot by default
         fileExplorer = "thunar", -- thunar by default
-        appLauncher = "rofi -show drun", -- rofi by default
-        webBrowser = "flatpak run app.zen_browser.zen", -- zen on flatpak by default, you can change this to the AUR version
+        appLauncher = "rofi -show drun", -- rofi by default, will be changed to hyprlauncher whenever they add it as an official package in artix repos
+        webBrowser = "flatpak run app.zen_browser.zen", -- zen on flatpak by default, you can change this to the AUR version, but it has systemd as a dependency, so I suggest
+                                                        -- not to.
     },
     statusBar = "waybar",
     discord = "vesktop", -- vesktop by Default, you need to change it to com\.[organisation]\.[app] for the flatpak version as it is used for global app keybinds.
