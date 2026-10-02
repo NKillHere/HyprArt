@@ -31,7 +31,7 @@ end)
 
 -- Open Clipboard
 
-hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
+hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("cliphist list | hyprlauncher -m | cliphist decode | wl-copy"))
 
 -- Enable blue light filter (hyprsunset by default)
 -- hl.bind(mainMod.. " + ".. sideMod1.. " + S", hl.dsp.exec_cmd("hyprsunset"))
