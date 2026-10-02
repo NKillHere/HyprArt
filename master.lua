@@ -6,7 +6,9 @@ require("utils")
 -- Function calling table layout
 
 ha = {
-    vars = {},
+    vars = {
+        bottompath = "$HOME/.config/hypr/HyprArt"
+    },
     funcs = {}
 }
 
