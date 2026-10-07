@@ -29,8 +29,10 @@ hl.bind("Print", function()
     hl.plugin.hyprcapture.open("window")
 end)
 
--- Open Clipboard
+-- Open Music Player (audacious by default)
+hl.bind(mainMod.. "+ A", hl.dsp.exec_cmd(ha.vars.default.apps.musicPlayer))
 
+-- Open Clipboard
 hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("cliphist list | hyprlauncher -m | cliphist decode | wl-copy"))
 
 -- Enable blue light filter (hyprsunset by default)
