@@ -24,14 +24,15 @@ hl.config({
 -- Default Apps
 ha.vars.default = {
     apps = {
-        terminal = "foot", -- foot by default
+        terminal = "foot -c ".. ha.vars.bottompath.. "/apps/foot/cfg.ini", -- foot by default
         fileExplorer = "thunar", -- thunar by default
         appLauncher = "hyprlauncher", -- rofi by default, will be changed to hyprlauncher whenever they add it as an official package in artix repos
-        webBrowser = "flatpak run app.zen_browser.zen", -- zen on flatpak by default, you can change this to the AUR version, but it has systemd as a dependency, so I suggest
-        -- not to.
+        webBrowser = "flatpak run app.zen_browser.zen", -- zen on flatpak by default, you can change this to the AUR version, but it has systemd as a dependency, so I suggest not to.
+        musicPlayer = "audacious"
     },
     startup = {
-        wallpaper = "hyprpaper -c ".. ha.vars.bottompath.. "/visuals/cache/selected_wallpaper.conf" ,
+        wallpaperDaemon = "hyprpaper",
+        wallpaper = "hyprpaper -c ".. ha.vars.bottompath.. "/visuals/cache/selected_wallpaper.conf",
         statusBar = "quickshell -c nova"
     },
     discord = "vesktop" -- vesktop by Default, you need to change it to com\.[organisation]\.[app] for the flatpak version as it is used for global app keybinds.
