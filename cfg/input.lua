@@ -53,7 +53,7 @@ hl.bind(mainMod.. " + KP_Next", hl.dsp.send_shortcut({mods = "CTRL + SHIFT", key
 -- Things that change how hyprland displays things, such as changing focus to other windows
 
 hl.bind(mainMod.. " + Q",                       hl.dsp.window.close()) -- close window
-hl.bind(mainMod .. " + " .. sideMod1 .. " + Q", hl.dsp.window.close()) -- kill stubborn window
+hl.bind(mainMod .. " + " .. sideMod1 .. " + Q", hl.dsp.window.kill()) -- kill stubborn window
 
 hl.bind(mainMod.. " + ".. sideMod1.." + ".. sideMod2.. " + M", hl.dsp.exec_cmd("hyprshutdown -vt 2")) -- Exit Hyprland. TODO: Add to install script: https://wiki.hypr.land/hypr-ecosystem/user/hyprshutdown/#nvidia--sddm-users
 

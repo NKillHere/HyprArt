@@ -53,3 +53,7 @@ prequire("visuals/vmaster")
 
 -- Per-device configs go here
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
+
+-- User configuration changes (Recommended to use if you intend on testing and contributing at the same time)
+
+prequire("./user/*")
